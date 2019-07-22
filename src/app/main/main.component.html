@@ -75,9 +75,21 @@
         </a>
 </div> 
 
-<mat-grid-list cols="4" rowHeight="2:1">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-</mat-grid-list>
+<div class= "card mb-4"></div>
+
+<div class="container" style="min-width: 90vw;">
+  <div class="row" >
+      <div *ngFor="let productslice of productslices" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="card mb-4 box-shadow">
+          <!-- Content -->
+          <img src={{productslice.url}} clsas="prdimg"/>
+          <h6 class="text-uppercase font-weight-bold">{{productslice.name}}</h6>
+          <!-- <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;"> -->
+          <p>{{productslice.description}}</p>
+          <button class="button">Add to Cart</button>
+        </div>        
+      </div>
+    </div>
+</div>
+
+

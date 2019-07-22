@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatGridListModule} from '@angular/material'
+import { NgModule, Component, OnInit } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Product } from '../product';
+import { PRODUCTS } from '../mock-products';
 
 @Component({
   selector: 'app-main',
@@ -12,7 +11,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 })
 export class MainComponent implements OnInit {
 
-  //images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
+  products: Product[];
+  productslices: Product[];
+
+  constructor() { 
+    this.products = PRODUCTS;
+    this.productslices = this.products.slice(0,4);
+  }
 
   ngOnInit() {
   }
