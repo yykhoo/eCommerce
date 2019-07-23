@@ -9,6 +9,15 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { AccountComponent } from './account/account.component';
+import { SupportComponent } from './support/support.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductListingComponent } from './product-listing/product-listing.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { CareerComponent } from './career/career.component';
+import { HelpComponent } from './help/help.component';
+import { PolicyComponent } from './policy/policy.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +26,16 @@ import { AccountComponent } from './account/account.component';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    AccountComponent
+    AccountComponent,
+    SupportComponent,
+    ProductDetailComponent,
+    ProductListingComponent,
+    AboutusComponent,
+    SigninComponent,
+    SignupComponent,
+    CareerComponent,
+    HelpComponent,
+    PolicyComponent
   ],
   imports: [
     BrowserModule,
