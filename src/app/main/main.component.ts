@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Product } from '../product';
 import { PRODUCTS } from '../mock-products';
 
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',

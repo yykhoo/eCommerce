@@ -30,8 +30,6 @@
         {{paused ? 'Cycle' : 'Pause' }}
       </button> -->
 
-
-
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -77,19 +75,17 @@
 
 <div class= "card mb-4"></div>
 
-<div class="container" style="min-width: 90vw;">
+<div class="container" style="min-width: 70vw;">
   <div class="row" >
-      <div *ngFor="let productslice of productslices" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div *ngFor="let productslice of productslices" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
         <div class="card mb-4 box-shadow">
           <!-- Content -->
           <img src={{productslice.url}} clsas="prdimg"/>
           <h6 class="text-uppercase font-weight-bold">{{productslice.name}}</h6>
           <!-- <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;"> -->
           <p>{{productslice.description}}</p>
-          <button class="button">Add to Cart</button>
+          <button type="button" class="btn btn-outline-secondary">Shop Now</button>
         </div>        
       </div>
     </div>
 </div>
-
-
