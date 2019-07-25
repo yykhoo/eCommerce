@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { ProductService} from '../product.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,14 +16,21 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    ) { 
-  }
+    private productService: ProductService,
+    private location: Location
+    ) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe( params => { this.product = Product[+params.get('id')]});
-
-    // window.alert("ID: " + this.product);
+    this.getProduct();
   }
 
+  getProduct(): void{
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.productService.getProduct(id).subscribe(product=>this.product = product);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
 
 }

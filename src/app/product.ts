@@ -5,4 +5,5 @@ export class Product {
     url: string;
     price: number;
     rating: number;
+    stock_available: number;
   }

@@ -46,7 +46,7 @@
 
 <div class="container" style="min-width: 70vw;">
   <div class="row" >
-      <div *ngFor="let productslice of productslices" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <div *ngFor="let productslice of productslices" class="col-lg-3 col-md-4 col-sm-6 col-xs-12" routerLink="/home/product-detail/{{productslice.id}}">
         <div class="card mb-4 box-shadow">
           <!-- Content -->
           <img src={{productslice.url}} clsas="prdimg"/>
