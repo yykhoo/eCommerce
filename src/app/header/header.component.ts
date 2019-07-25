@@ -7,4 +7,16 @@ import { Router } from "@angular/router";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  router: Router;
+
+  constructor( router: Router){
+    this.router = router;
+  }
+
+  home(){
+    const parameters={
+  
+    }; this.router.navigate(["/eCommerce/"])
+  }
+  
 }

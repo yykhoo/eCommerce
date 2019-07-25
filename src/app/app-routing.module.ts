@@ -16,20 +16,65 @@ import { HelpComponent} from './help/help.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'main', component: MainComponent },
-  { path: 'header', component: HeaderComponent },
-  { path: 'footer', component: FooterComponent },
-  { path: 'support', component: SupportComponent },
-  { path: 'product-listing', component: ProductListingComponent },  
-  { path: 'product-detail', component: ProductDetailComponent },
-  { path: 'signup', component: SignupComponent },  
-  { path: 'signin', component: SigninComponent },  
-  { path: 'aboutus', component: AboutusComponent },
-  { path: 'policy', component: PolicyComponent},
-  { path: 'career', component: CareerComponent},
-  { path: 'help', component: HelpComponent}
+  
+  { 
+    path: '', 
+    redirectTo: '/home/main', 
+    pathMatch: 'full' 
+  },
+  
+  { 
+      path: 'home', 
+      component: HomeComponent,
+      children:[
+        {
+          path: 'main', 
+          component: MainComponent
+        },{
+          path: 'support', 
+          component: SupportComponent
+        },{
+          path: 'product-listing', 
+          component: ProductListingComponent
+        },
+        { 
+          path: 'product-detail/:id', 
+          component: ProductDetailComponent 
+        },
+        { 
+          path: 'signup', 
+          component: SignupComponent 
+        },{ 
+          path: 'signin', 
+          component: SigninComponent },  
+        { 
+          path: 'aboutus', 
+          component: AboutusComponent 
+        },{ 
+          path: 'policy', 
+          component: PolicyComponent
+        },{ 
+          path: 'career', 
+          component: CareerComponent
+        },{ 
+          path: 'help', 
+          component: HelpComponent
+        }
+      ] 
+  }
+  
+  // { path: 'main', component: MainComponent },
+  // { path: 'header', component: HeaderComponent },
+  // { path: 'footer', component: FooterComponent },
+  // { path: 'support', component: SupportComponent },
+  // { path: 'product-detail', component: ProductDetailComponent },
+  // { path: 'signup', component: SignupComponent },  
+  // { path: 'signin', component: SigninComponent },  
+  // { path: 'aboutus', component: AboutusComponent },
+  // { path: 'policy', component: PolicyComponent},
+  // { path: 'career', component: CareerComponent},
+  // { path: 'help', component: HelpComponent}
+  
 ];
 
 @NgModule({
