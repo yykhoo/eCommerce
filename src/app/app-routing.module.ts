@@ -13,7 +13,9 @@ import { AboutusComponent} from './aboutus/aboutus.component';
 import { PolicyComponent } from './policy/policy.component';
 import { CareerComponent } from './career/career.component';
 import { HelpComponent} from './help/help.component';
-
+import { ReturnRefundComponent} from './return-refund/return-refund.component';
+import { ShopGuaranteeComponent} from './shop-guarantee/shop-guarantee.component';
+import { HowtobuyComponent} from './howtobuy/howtobuy.component';
 
 const routes: Routes = [
   
@@ -21,8 +23,7 @@ const routes: Routes = [
     path: '', 
     redirectTo: '/home/main', 
     pathMatch: 'full' 
-  },
-  
+  },  
   { 
       path: 'home', 
       component: HomeComponent,
@@ -59,6 +60,15 @@ const routes: Routes = [
         },{ 
           path: 'help', 
           component: HelpComponent
+        },{ 
+          path: 'howtobuy', 
+          component: HowtobuyComponent
+        },{ 
+          path: 'shop-guarantee', 
+          component: ShopGuaranteeComponent
+        },{ 
+          path: 'retur-nrefund', 
+          component: ReturnRefundComponent
         }
       ] 
   }

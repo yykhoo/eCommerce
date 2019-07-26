@@ -1,3 +1,30 @@
 .prdimg{
     height: auto; width: 100%;  
 }
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-inner::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+
+
+  @media only screen and (max-width: 1200px) {
+    .carousel-item>img{
+      height:35vh !important;
+
+    }    
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .carousel-item>img{
+      height:50vh !important;
+
+    } 
+  }

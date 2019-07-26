@@ -20,6 +20,9 @@ import { SignupComponent } from './signup/signup.component';
 import { CareerComponent } from './career/career.component';
 import { HelpComponent } from './help/help.component';
 import { PolicyComponent } from './policy/policy.component';
+import { HowtobuyComponent } from './howtobuy/howtobuy.component';
+import { ReturnRefundComponent } from './return-refund/return-refund.component';
+import { ShopGuaranteeComponent } from './shop-guarantee/shop-guarantee.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { PolicyComponent } from './policy/policy.component';
     SignupComponent,
     CareerComponent,
     HelpComponent,
-    PolicyComponent
+    PolicyComponent,
+    HowtobuyComponent,
+    ReturnRefundComponent,
+    ShopGuaranteeComponent
   ],
   imports: [
     BrowserModule,

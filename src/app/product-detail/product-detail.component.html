@@ -1,8 +1,8 @@
 
 <br/><br/>
-<button (click)="goBack()">go back</button>
 
 <div class="container" style="min-width: 70vw;">
+    <button class="btn btn-primary hBac" (click)="goBack()">Back</button>
 		<div class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
@@ -28,7 +28,7 @@
                         <h3 class="product-title">{{product.name}}</h3>
                         <ngb-rating [rate]="product.rating" [readonly]="true" max="5">
                             <ng-template let-fill="fill" let-index="index">
-                                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 6">&#9733;</span>
                             </ng-template>
                         </ngb-rating>
 						<!-- <div class="rating">
