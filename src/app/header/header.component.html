@@ -26,9 +26,20 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> -->
             <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <!--
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                (click)="toggleAccount()">
                     <i class="fa fa-user mr-3" style="font-size:24px"></i>  Account</a>
-                <div class="dropdown-menu bg-light">
+                -->
+                <a data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                (click)="toggleAccount()">
+                    <i class="fa fa-user mr-3" style="font-size:24px"></i>  
+                    Account
+                    <i class="fa fa-angle-{{showAccountDropdown?'up':'down'}}"></i>
+                </a>
+                <div class="dropdown-menu bg-light"
+                style="display:block !important"
+                *ngIf="showAccountDropdown">
                     <a class="dropdown-item" routerLink="./signin">Log In</a>
                     <a class="dropdown-item" routerLink="./signup">Sign Up</a>
                 </div>

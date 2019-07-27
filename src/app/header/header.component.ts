@@ -6,17 +6,28 @@ import { Router } from "@angular/router";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
   router: Router;
+  showAccountDropdown:boolean;
 
   constructor( router: Router){
     this.router = router;
+  }
+
+  ngOnInit(){
+
+
   }
 
   home(){
     const parameters={
   
     }; this.router.navigate(["/eCommerce/"])
+  }
+
+  toggleAccount(){
+    this.showAccountDropdown=!this.showAccountDropdown;
+
   }
   
 }
