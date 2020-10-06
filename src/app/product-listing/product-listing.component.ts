@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { PRODUCTS } from '../mock-products';
 import { ProductService } from '../product.service';
+
+import { productAPIService } from '../services/productAPI.service';
+
 @Component({
   selector: 'app-product-listing',
   templateUrl: './product-listing.component.html',
@@ -11,7 +14,7 @@ export class ProductListingComponent implements OnInit {
 
   products: Product[];
   searchText:string;
-  constructor( private productService: ProductService) { 
+  constructor( private productService: productAPIService) { 
     //this.products = PRODUCTS;
   }
 
@@ -19,8 +22,13 @@ export class ProductListingComponent implements OnInit {
     this.getProducts();
   }
 
-  getProducts(): void{
-    this.productService.getProducts().subscribe( products => this.products = products);
+  getProducts() {
+    //this.productService.getProducts().subscribe( products => this.products = products);
+    this.productService.getProducts().subscribe(
+      data => {
+          this.products = data;
+      }
+    )
   }
 
   // changeSearch(){

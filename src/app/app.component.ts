@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { productAPIService } from './services/productAPI.service';
 
 @Component({
   selector: 'app-root',

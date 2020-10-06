@@ -24,6 +24,8 @@ import { HowtobuyComponent } from './howtobuy/howtobuy.component';
 import { ReturnRefundComponent } from './return-refund/return-refund.component';
 import { ShopGuaranteeComponent } from './shop-guarantee/shop-guarantee.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { productAPIService } from './services/productAPI.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,9 +50,10 @@ import { ShopGuaranteeComponent } from './shop-guarantee/shop-guarantee.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [productAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

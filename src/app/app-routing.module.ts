@@ -67,7 +67,7 @@ const routes: Routes = [
           path: 'shop-guarantee', 
           component: ShopGuaranteeComponent
         },{ 
-          path: 'retur-nrefund', 
+          path: 'return-refund', 
           component: ReturnRefundComponent
         }
       ] 

@@ -3,6 +3,7 @@ import { Product } from '../product';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProductService} from '../product.service';
+import { productAPIService } from '../services/productAPI.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -16,7 +17,7 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService,
+    private productService: productAPIService,
     private location: Location
     ) {}
 
@@ -26,7 +27,12 @@ export class ProductDetailComponent implements OnInit {
 
   getProduct(): void{
     const id = +this.route.snapshot.paramMap.get('id');
-    this.productService.getProduct(id).subscribe(product=>this.product = product);
+    //his.productService.getProduct(id).subscribe(product=>this.product = product);
+    this.productService.getProduct(id).subscribe(      
+        data => {
+          this.product = data;
+      }
+    )
   }
 
   goBack(): void {
