@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from './product';
+import { Product } from './class/product';
 import { PRODUCTS } from './mock-products';
 import { Observable, of} from 'rxjs';
 

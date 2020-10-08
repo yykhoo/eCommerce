@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Product } from '../product';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { Category } from '../class/category';
+import { Product } from '../class/product';
 import { PRODUCTS } from '../mock-products';
 import { ProductService } from '../product.service';
 
+import { categoryAPIService } from '../services/categoryAPI.service';
 import { productAPIService } from '../services/productAPI.service';
 
 @Component({
@@ -13,13 +15,32 @@ import { productAPIService } from '../services/productAPI.service';
 export class ProductListingComponent implements OnInit {
 
   products: Product[];
+  categories: Category[];
+  
   searchText:string;
-  constructor( private productService: productAPIService) { 
+  showLeftContainer!:boolean;
+  expandRightContainer!:boolean;
+  constructor( private productService: productAPIService,
+               private categoryService: categoryAPIService ) { 
     //this.products = PRODUCTS;
+    this.showLeftContainer=true;
+    this.expandRightContainer=false;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if(window.innerWidth<1200){
+      this.showLeftContainer=false;
+      this.expandRightContainer=true;
+    }else{
+      this.showLeftContainer=true;
+      this.expandRightContainer=false;
+    }
   }
 
   ngOnInit() {
-    this.getProducts();
+    this.getCategories();
+    this.getProductsByCategoryId(1);
   }
 
   getProducts() {
@@ -27,6 +48,23 @@ export class ProductListingComponent implements OnInit {
     this.productService.getProducts().subscribe(
       data => {
           this.products = data;
+      }
+    )
+  }
+
+  getProductsByCategoryId(categoryId: number ) {
+    this.productService.getProductbyCategoryId(categoryId).subscribe(
+      data => {
+          this.products = data;
+      }
+    )
+  }
+  
+  
+  getCategories() {
+    this.categoryService.getcategories().subscribe(
+      data => {
+          this.categories = data;
       }
     )
   }

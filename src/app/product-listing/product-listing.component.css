@@ -1,4 +1,6 @@
-
+body {
+  background-color: #eee
+}
 
 .product-list-container{
     width: 100%;
@@ -97,3 +99,62 @@ footer {
 footer a {
     color: #f8f9fa!important
 }
+
+/*
+.container{
+  width:100vw;
+  min-height:100vh;
+  display:flex;
+  background-color:blue;
+}
+
+.left-container{
+  min-height:100vh;
+  background-color:yellow;
+}
+
+.right-container{
+  min-height:100vh;
+  background-color:green;
+}
+
+.header{
+  height:50px;
+  background-color:purple;
+}
+
+.left-container-toggler{
+  width:50px;
+  height:50px;
+}
+
+.show-left-container{
+  width:25%;
+  transition: 1s;
+}
+
+.hide-left-container{
+  width:0px;
+  transition: 1s;
+}
+
+.collapse-right-container{
+  width:75%;
+  transition: 1s;
+}
+
+.expand-right-container{
+  width:100%;
+  transition: 1s;
+}
+
+.body{
+  height:calc(100vh - 75px);
+  background-color:pink;
+}
+
+.footer{
+  height:25px;
+  background-color:orange;
+}
+*/

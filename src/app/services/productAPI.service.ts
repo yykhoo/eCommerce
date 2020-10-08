@@ -13,9 +13,15 @@ export class productAPIService
         return this.httpclient.get("https://localhost:44335/gateway/product");
     }
 
-    getProduct(id: number): Observable<any>
+    getProductbyId(id: number): Observable<any>
     {
-        var linkId = "https://localhost:44335/gateway/product/" + id;
+        var linkId = "https://localhost:44335/gateway/product/id/" + id;
+        return this.httpclient.get(linkId);
+    }
+
+    getProductbyCategoryId(categoryId: number): Observable<any>
+    {
+        var linkId = "https://localhost:44335/gateway/product/categoryId/" + categoryId;
         return this.httpclient.get(linkId);
     }
 }

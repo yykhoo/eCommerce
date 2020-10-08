@@ -26,6 +26,7 @@ import { ShopGuaranteeComponent } from './shop-guarantee/shop-guarantee.componen
 
 import { HttpClientModule } from '@angular/common/http';
 import { productAPIService } from './services/productAPI.service';
+import { CategoryComponent } from './category/category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { productAPIService } from './services/productAPI.service';
     PolicyComponent,
     HowtobuyComponent,
     ReturnRefundComponent,
-    ShopGuaranteeComponent
+    ShopGuaranteeComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Product } from './product';
+import { Product } from './class/product';
 
 export const PRODUCTS: Product[] =[
     { id: 1, name: 'Product 1', description: 'Product 1 Description', price: 10.99, rating:3, stock_available:50, url: 'https://lc-imageresizer-live-s.legocdn.com/resize/21317_prod_2400?width=360&imageUrl=https%3a%2f%2fwww.lego.com%2fr%2fwww%2fr%2fportals%2f-%2fmedia%2flegocom%2fhome%2fshop%2fideas%2f21317_prod_2400.jpg%3fl.r%3d1689810347' },

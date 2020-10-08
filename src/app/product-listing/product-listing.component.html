@@ -10,12 +10,15 @@
         <div class="col-12 col-sm-3">
             <div class="card bg-light mb-3">
                 <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
-                <ul class="list-group category_block">
-                    <li class="list-group-item"><a href="category.html">Category 1</a></li>
-                    <li class="list-group-item"><a href="category.html">Category 2</a></li>
-                    <li class="list-group-item"><a href="category.html">Category 3</a></li>
-                    <li class="list-group-item"><a href="category.html">Category 4</a></li>
-                    <li class="list-group-item"><a href="category.html">Category 5</a></li>
+                <ul *ngFor="let category of categories; index as id" class="list-group category_block">
+                    <li class="list-group-item"><a href="category.html">{{category.description}}</a></li>
+                    <!--
+                        <li class="list-group-item"><a href="category.html">Category 1</a></li>
+                        <li class="list-group-item"><a href="category.html">Category 2</a></li>
+                        <li class="list-group-item"><a href="category.html">Category 3</a></li>
+                        <li class="list-group-item"><a href="category.html">Category 4</a></li>
+                        <li class="list-group-item"><a href="category.html">Category 5</a></li>
+                    -->
                 </ul>
             </div>
         </div>
@@ -25,11 +28,9 @@
 
                     <div role="button" routerLink="/home/product-detail/{{product.id}}">
                         <div class="card mb-4 box-shadow">
-                        <!-- Content -->
                         <img src={{product.url}} class="prdimg" role="button"/>
                         <br/>
                         <h6 class="text-uppercase font-weight-bold">{{product.name}}</h6>
-                        <!-- <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;"> -->
                         <p>{{product.description}}</p>
                         <p>RM {{product.price}}</p>
                         <button type="button" class="btn btn-outline-secondary">Add to Cart</button>
@@ -59,3 +60,64 @@
     
     </div>
 </div>
+<!--
+<div class="container"
+(window:resize)="onResize($event)">
+    <div class="left-container"
+    [class.show-left-container]="showLeftContainer"
+    [class.hide-left-container]="!showLeftContainer">
+
+    </div>
+    <div class="right-container"
+    [class.expand-right-container]="expandRightContainer"
+    [class.collapse-right-container]="!expandRightContainer">
+        <div class="card header">
+            <button class="left-container-toggler"
+            (click)="showLeftContainer=!showLeftContainer;expandRightContainer=!expandRightContainer;">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <div class="card body">
+
+        </div>
+        <div class="card footer">
+
+        </div>
+    </div>
+</div>
+-->
+
+<!--
+<div class="container mt-5 mb-5">
+    <div class="p-2 bg-white px-4">
+        <div class="d-flex flex-row justify-content-between">
+            <div class="d-flex flex-row align-items-center filters">
+                <h4>Filters</h4><span class="ml-2">(234 items)</span>
+            </div>
+            <div class="d-flex flex-row align-items-center filters">
+                <div class="d-flex flex-row align-items-center">
+                    <h5 class="mt-1">Sort by</h5><span class="ml-2">our price</span><i class="fa fa-angle-down ml-1"></i>
+                </div>
+                <div class="d-flex flex-row align-items-center ml-3"><span>ratings</span><i class="fa fa-angle-down ml-1"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let product of products; index as id" class="col-12 col-md-6 col-lg-4 btn">
+
+            <div role="button" routerLink="/home/product-detail/{{product.id}}">
+                <div class="card mb-4 box-shadow">
+                <img src={{product.url}} class="prdimg" role="button"/>
+                <br/>
+                <h6 class="text-uppercase font-weight-bold">{{product.name}}</h6>
+                <p>{{product.description}}</p>
+                <p>RM {{product.price}}</p>
+                <button type="button" class="btn btn-outline-secondary">Add to Cart</button>
+                </div> 
+            </div>  
+        </div>
+
+
+    </div>
+</div>
+-->
