@@ -13,6 +13,8 @@ import { Product } from '../class/product';
 export class ShoppingCartComponent implements OnInit {
 
   cartItems: CartItem[];
+  totalCartItems: number;
+  totalPrice: number;
 
   constructor(private cartAPIService: cartAPIService,
               private productAPIService: productAPIService ) { }
@@ -24,9 +26,11 @@ export class ShoppingCartComponent implements OnInit {
   getCartItems(cartId: number)
   {
     cartId = 1;
+    this.totalPrice = 0;
     this.cartAPIService.getCartItems(cartId).subscribe(
       data => {
           this.cartItems = data;
+          this.totalCartItems = this.cartItems.length;
           this.populateProduct();
       }  
     )  
@@ -39,6 +43,9 @@ export class ShoppingCartComponent implements OnInit {
         this.productAPIService.getProductbyId(cartItem.productId).subscribe(
           data => {
             cartItem.product = data;
+            cartItem.totalPrice = cartItem.product.price * cartItem.quantity;
+            this.totalPrice = this.totalPrice + cartItem.totalPrice;
+            //console.log("cartItem: " + JSON.stringify(cartItem ));
           }  
         )  
     }

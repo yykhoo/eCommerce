@@ -22,3 +22,12 @@
     width: .7rem;
     background-color: #495057;
 }
+
+.img-fluid{
+    width: 100px;
+    height:auto;
+}
+
+.horizontal-navbar-nav{
+    flex-direction: row;
+}

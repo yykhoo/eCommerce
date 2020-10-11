@@ -7,4 +7,5 @@ export class CartItem {
     quantity: number;
     dateCreated: Date;
     product: Product;
+    totalPrice: number;
   }
