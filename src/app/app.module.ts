@@ -26,7 +26,10 @@ import { ShopGuaranteeComponent } from './shop-guarantee/shop-guarantee.componen
 
 import { HttpClientModule } from '@angular/common/http';
 import { productAPIService } from './services/productAPI.service';
+import { categoryAPIService } from './services/categoryAPI.service';
+import { cartAPIService } from './services/cartItemAPI.service';
 import { CategoryComponent } from './category/category.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +50,8 @@ import { CategoryComponent } from './category/category.component';
     HowtobuyComponent,
     ReturnRefundComponent,
     ShopGuaranteeComponent,
-    CategoryComponent
+    CategoryComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,7 @@ import { CategoryComponent } from './category/category.component';
     NgbModule,
     HttpClientModule
   ],
-  providers: [productAPIService],
+  providers: [productAPIService, categoryAPIService, cartAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

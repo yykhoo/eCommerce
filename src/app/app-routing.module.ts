@@ -16,6 +16,7 @@ import { HelpComponent} from './help/help.component';
 import { ReturnRefundComponent} from './return-refund/return-refund.component';
 import { ShopGuaranteeComponent} from './shop-guarantee/shop-guarantee.component';
 import { HowtobuyComponent} from './howtobuy/howtobuy.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   
@@ -69,6 +70,10 @@ const routes: Routes = [
         },{ 
           path: 'return-nrefund', 
           component: ReturnRefundComponent
+        },
+        { 
+          path: 'shopping-cart', 
+          component: ShoppingCartComponent
         }
       ] 
   }

@@ -5,6 +5,7 @@
   
   #content-wrap {
     padding-bottom: 2.5rem;    /* Footer height */
+    white-space: pre-line;
   }
   
   #footer {
@@ -13,3 +14,8 @@
     width: 100%;
     height: 2.5rem;            /* Footer height */
   }
+
+  .main{
+    padding-top: 160px;
+  }
+  

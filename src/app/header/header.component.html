@@ -1,52 +1,80 @@
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-    <a routerLink="./main" class="navbar-brand">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class='header-top-sticky top-sticky'>
+        <div class='navbar-wrapper'>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
     
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-        <!-- <li class="nav-item active">
-            <a routerLink="./main"  class="nav-link">Home <span class="sr-only">(current)</span></a>
-        </li> -->
-        <li routerLinkActive="router-link-active" class="nav-item">
-            <a routerLink="./product-listing" class="nav-link">Products</a>
-        </li>
-        <li class="nav-item">
-            <a routerLink="./support" class="nav-link" tabindex="-1" aria-disabled="true">Support</a>
-        </li>
-        </ul>
-
-
-        <ul class="navbar-nav ml-auto">
-            <!-- <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form> -->
-            <li class="nav-item dropdown ">
-                <!--
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-                (click)="toggleAccount()">
-                    <i class="fa fa-user mr-3" style="font-size:24px"></i>  Account</a>
-                -->
-                <a data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-                (click)="toggleAccount()">
-                    <i class="fa fa-user mr-3" style="font-size:24px"></i>  
-                    Account
-                    <i class="fa fa-angle-{{showAccountDropdown?'up':'down'}}"></i>
+                <a routerLink="./main" class="navbar-brand">                
+                    <img [src]="'assets/img/ecommerce.png'" class="logo" />
                 </a>
-                <div class="dropdown-menu bg-light"
-                style="display:block !important"
-                *ngIf="showAccountDropdown">
-                    <a class="dropdown-item" routerLink="./signin">Log In</a>
-                    <a class="dropdown-item" routerLink="./signup">Sign Up</a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <!-- <li class="nav-item active">
+                        <a routerLink="./main"  class="nav-link">Home <span class="sr-only">(current)</span></a>
+                    </li> -->
+                    <li routerLinkActive="router-link-active" class="nav-item">
+                        <a routerLink="./product-listing" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="./support" class="nav-link" tabindex="-1" aria-disabled="true">Support</a>
+                    </li>
+                    </ul>
+            
+            
+                    <ul class="navbar-nav ml-auto">
+                        <!-- <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form> -->    
+                        <li class="nav-item dropdown ">
+                            <!--
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                            (click)="toggleAccount()">
+                                <i class="fa fa-user mr-3" style="font-size:24px"></i>  Account</a>
+                            -->
+                            <a data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                            (click)="toggleAccount()">
+                                <i class="fa fa-user mr-3" style="font-size:24px"></i>  
+                                Account
+                                <i class="fa fa-angle-{{showAccountDropdown?'up':'down'}}"></i>
+                            </a>
+                            <div class="dropdown-menu bg-light"
+                            style="display:block !important"
+                            *ngIf="showAccountDropdown">
+                                <a class="dropdown-item" routerLink="./signin">Log In</a>
+                                <a class="dropdown-item" routerLink="./signup">Sign Up</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </li>
-        </ul>
+            </nav>
+        </div>
      
-    </div>
-  </nav>
-  
- 
+        <div class="container-wrap header-with-search-wrapper bg-light">
+            <div class=".header-with-search__search-section">
+    
+                <div class="container header-with-search">
+                    <div class="searchbar">
+                        <div class="searchbar__main">
+                            <form class="searchbar-input">
+                                <input class="searchbar-input__input" type="search" placeholder="Search" aria-label="Search">
+                                <button type="submit"><i class="fa fa-search"></i></button>                          </form>
+                        </div>
+                    </div>
+            
+                    <div class="header-with-search__cart-wrapper button">
+                        <span class="p1 fa-stack fa-2x has-badge"  style="font-size:28px" data-count="4">
+                        <!--<i class="p2 fa fa-circle fa-stack-2x"></i>-->
+                            <i class="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse" style="font-size:28px" data-count="4b" routerLink="/home/shopping-cart"></i>
+                        </span>     
+                    </div>  
+                </div>
+                  
+            </div>
+            
+        </div>
+    
+</div>
